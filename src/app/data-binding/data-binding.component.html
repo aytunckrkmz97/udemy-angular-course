@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>
+            One Way Binding
+            <span style="font-size: 0.9 rem;">from Component to DOM</span>
+        </h2>
+
+        <div class="row">
+            <div class="col-md-2">
+                <h3>Interpolation</h3>
+                <p>Ad:{{user.name}}, Soyad : {{user.surname}}</p>
+                <p>Hesaplama : {{1 + 2}}</p>
+                <div>
+                    <img src="{{user.favoritePlaceImage}}" alt="favoritePlaceImage" height="100">
+                </div>
+            </div>
+
+            <div class="col md-3">
+                <h3>Property Binding</h3>
+                <input [type]="type" [value]="user.job">
+            </div>
+
+            <div class="col md-3">
+                <h3>Attribute Binding</h3>
+                <input [type]="type" [value]="user.job" [attr.disabled]="user.isEdittable ? 'disabled' : null ">
+            </div>
+
+            <div class="col-md-2">
+                <h3>Class Binding</h3>
+                <p [class.red]="user.name==='Aytunç' ? true : false">Renk Değeri</p>
+            </div>
+
+            <div class="col-md-2">
+                <h3>Style Binding</h3>
+                <p [style.color]="!user.isEdittable ? 'orange' : 'blue'">Style Color</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h2>Event Binding</h2>
+            <span> from DOM to Component</span>
+            <div class="row">
+
+            </div>
+            <input type="text" [value]="user.name" (keyup.enter)="inputSubmit($event)">
+            <button (click)="buttonClicked();">OK !</button>
+        </div>
+    </div>
+
+
+    <div class="col-md-12 mt-3">
+        <h2>
+            Two Way Binding
+        </h2>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>nGModel</h3>
+                <input type="text" [(ngModel)]="user.name">
+                <p>{{user.name}}</p>
+            </div>
+        </div>
+
+
+    </div>
+</div>
